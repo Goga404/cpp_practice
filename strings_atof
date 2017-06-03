@@ -1,0 +1,26 @@
+// C++ Builder 6 console aplication
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+#include<iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main() {
+  char string_num1[30];
+  char string_num2[30];
+
+  cout << "Enter two numbers: " << endl;
+  cin >> string_num1 >> string_num2;
+
+  double sum = atof(string_num1) + atof(string_num2);
+  
+  cout << "Sum: " << sum << endl;
+  system("pause");
+
+  return 0;
+}
