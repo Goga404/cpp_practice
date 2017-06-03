@@ -1,0 +1,32 @@
+// C++ Builder 6
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+
+using namespace std;
+
+int main() {
+  char cost[20];
+  int number_products;
+  int sum = 0;
+
+  cout << "Enter products number: ";
+  cin >> number_products;
+
+  for (int i = 0; i < number_products; i++) {
+    cout << "Enter product price: ";
+    cin >> cost;
+    int a = atoi(cost);
+    sum += a;
+  }
+  cout << "Total: " << sum << endl;
+  system("pause");
+
+  return 0;
+}
