@@ -10,7 +10,6 @@ int main() {
   cout << "Введите число: ";
   cin >> number;
 
-  /* ↓ Ваш код ↓ */
   do {
     factorial_value *= counter;
     counter++;
