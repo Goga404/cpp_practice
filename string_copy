@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  int first; // начальная позиция для копирования
+  int count; // количество символов для копирования
+
+  string path;
+  string extension;
+
+  cout << "Введите путь к файлу: ";
+  cin >> path;
+
+  first = path.find(".");
+  count = path.size() - first;
+  extension = path.substr(first, count);
+
+  cout << extension;
+
+  return 0;
+}
