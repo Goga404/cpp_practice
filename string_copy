@@ -17,7 +17,7 @@ int main() {
   count = path.size() - first;
   extension = path.substr(first, count);
 
-  cout << extension;
+  cout << extension << endl;
 
   return 0;
 }
