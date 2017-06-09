@@ -1,0 +1,45 @@
+// console app
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void DisplayStatus(string, string, string, int, string);
+bool IsRightFullName(string, string, string);
+bool IsRightAge(int);
+bool IsRightPass(string);
+
+int main() {
+  string surname, name, patr, pass;
+  int age;
+
+  cout << "Введите фамилию, имя, отчество, возраст и пароль: ";
+  cin >> surname >> name >> patr >> age >> pass;
+  DisplayStatus(surname, name, patr, age, pass);
+
+  return 0;
+}
+
+void DisplayStatus(string surname, string name, string patr, int age, string pass) {
+  if (IsRightFullName(surname, name, patr) && IsRightAge(age) && IsRightPass(pass)) {
+    cout << "RIGHT";  
+  } else {cout << "ERROR";} 
+}
+
+bool IsRightAge(int age) {
+  if (18 < age < 80) {
+    return true;  
+  } else {return false;}
+}
+
+bool IsRightPass(string pass) {
+  if (pass.size() >= 8) {
+    return true; 
+  } else {return false;}
+}
+
+bool IsRightFullName(string surname, string name, string patr) {
+  if (surname.size() <= 20 && name.size() <= 20 && patr.size() <= 20) {
+    return true;  
+  } else {return false;}
+}
