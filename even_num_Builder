@@ -40,9 +40,9 @@ void __fastcall TForm1::ListBox1Click(TObject *Sender)
         Label3->Caption = "";
 
         int num, nstr;
-            nstr = ListBox1->ItemIndex; // îïðåäåëåíèå íîìåðà ñòðîêè
+            nstr = ListBox1->ItemIndex; // определение номера строки
 
-        String str= ListBox1->Items->Strings[nstr]; // çàïèñü âûáðàííîé ñòðîêè
+        String str= ListBox1->Items->Strings[nstr]; // запись выбранной строки
 
         String result = "";
 
