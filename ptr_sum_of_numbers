@@ -1,0 +1,23 @@
+#include<iostream>
+
+using namespace std;
+
+int main() {
+  int *ptr_number = new int;
+  int *sum = new int(0);
+  cin >> *ptr_number;
+
+  /* ↓ Найдите сумму цифр числа *ptr ↓ */
+  while (*ptr_number != 0) {
+    *sum = *sum + (*ptr_number)%10;
+    *ptr_number = (*ptr_number)/10;
+  }
+
+  cout << "Сумма цифер числа: " << *sum;
+
+  /* ↓ Высвобождение памяти ↓ */
+  delete ptr_number;
+  delete sum;
+
+  return 0;
+}
