@@ -1,0 +1,39 @@
+#include<iostream>
+
+using namespace std;
+
+/* ↓ Определите параметры прототипа функции ↓ */
+void Write(int **, int);
+
+int main() {
+  int size;
+  cin >> size;
+
+  // выделение памяти под элементы двумерного массвиа
+  int **matrix = new int *[size];
+  for (int i = 0; i < size; i++) {
+    matrix[i] = new int[size];
+  }
+
+  // заполнение массива
+  for (int i = 0; i < size; i++) {
+    for (int j = 0; j < size; j++) {
+      matrix[i][j] = j;
+    }
+  }
+
+  // вызов функции
+  Write(matrix, size);
+
+  return 0;
+}
+
+/* ↓ Определите параметры функции ↓ */
+void Write(int **matrix , int size) {
+  for (int i = 0; i < size; i++) {
+    for (int j = 0; j < size; j++) {
+      cout << matrix[i][j] << " ";
+    }
+    cout << endl;
+  }
+}
