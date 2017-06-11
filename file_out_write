@@ -1,0 +1,20 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+
+  ofstream out("output.txt", ios_base::app); // открытие файла для записи, указание имени, запись в конце файла
+  out << "7:00-Подъём" << endl;
+  out << "7:30-Зарядка" << endl;
+  out << "8:00-Завтрак" << endl;
+  out << "8:15-Начинаем писать на C++" << endl;
+  out << "12:00-Обед" << endl;
+  out << "12:30-Продолжаем писать" << endl;
+  out << "21:00-Отбой" << endl;
+  
+  out.close(); // закрытие файла
+  
+  return 0;
+}
