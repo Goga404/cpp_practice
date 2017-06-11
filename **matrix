@@ -36,4 +36,6 @@ void Write(int **matrix , int size) {
     }
     cout << endl;
   }
+  
+  delete matrix;
 }
