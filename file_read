@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+#include<string>
+
+using namespace std;
+
+int main() {
+  char str[32]; // строка для считывания
+  int max; // максимальное значение
+
+  /* ↓ Открытие файла для чтения ↓ */
+  ifstream in("numeric.txt");
+
+  in >> str;
+  max = atoi(str);
+  
+  while (!in.eof()) {
+    in.getline(str, 32);
+    if (atoi(str) > max) {
+      max = atoi(str);
+    }
+  }
+  cout << "Max = " << max;
+
+  /* ↓ Закрытие файла ↓ */
+  in.close();
+
+  return 0;
+}
