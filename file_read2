@@ -1,0 +1,50 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  char str[8]; // строка для считывания
+  int rows, cols; // размер матрицы
+
+  /* ↓ Открыть файл для чтения ↓ */
+  ifstream in("matrix.txt");
+
+  /* ↓ Прочитать из файла первое число ↓ */
+  in >> str;
+  rows = atoi(str);
+
+  /* ↓ Прочитать из файла второе число ↓ */
+  in >> str;
+  cols = atoi(str);
+
+  double **matrix = new double *[rows]; // создаём матрицу
+  for (int i = 0; i < rows; i++) {
+    matrix[i] = new double[cols];
+  }
+
+  /* ↓ реализация ↓ */
+  for (int i = 0; i < rows; i++)
+    for (int j = 0; j < cols; j++) {
+      in >> str;
+      matrix[i][j] = atof(str);
+    }
+  in.close();
+
+  // вывод значений матрицы
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+      cout << matrix[i][j] << " ";
+    }
+    cout << endl;
+  }
+
+  // высвобождение памяти
+  for (int i = 0; i < rows; i++) {
+    delete[] matrix[i];
+  }
+  delete[] matrix;
+
+  return 0;
+}
