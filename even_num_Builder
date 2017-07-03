@@ -46,7 +46,7 @@ void __fastcall TForm1::ListBox1Click(TObject *Sender)
 
         String result = "";
 
-        for(int i = 1; i < str.Length()+1; i++) {
+        for(int i = 1; i < str.Length(); i++) {
 
         if (str[i] != ' '){
         result += str[i];
